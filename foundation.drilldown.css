@@ -26,3 +26,6 @@
 	border-bottom-left-radius: 0;
 	border-bottom-right-radius: 0;
 }
+li.dd-parent a.dd-parent-a{
+	padding-right:30px;
+}
