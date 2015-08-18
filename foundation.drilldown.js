@@ -24,11 +24,11 @@
 		var defaults = {
 			wrapper_class		: 'drilldown',
 			menu_class			: 'drilldown-menu',
-			submenu_class	    : 'nav',
+			submenu_class	    : 'side-nav',
 			parent_class		: 'dd-parent',
 			parent_class_link	: 'dd-parent-a',
 			active_class		: 'active',
-			header_class_list   : 'breadcrumb',
+			header_class_list   : 'breadcrumbs',
 			header_class		: 'breadcrumbwrapper',
 			class_selected      : 'dd-selected',
 			event_type			: 'click',
@@ -37,11 +37,11 @@
 			save_state			: true,
 			show_count		    : false,
 			count_class			: 'dd-count',
-			icon_class		    : 'glyphicon glyphicon-chevron-right pull-right',
+			icon_class		    : 'fa fa-chevron-right',
 			link_type			: 'backlink', //breadcrumb , link, backlink
-			reset_text		    : '<span class="glyphicon glyphicon-folder-open"></span> All', // All
+			reset_text		    : '<span class="fa fa-folder-open"></span> All', // All
 			default_text		: 'Select Option',
-			show_end_nodes      : true, // drill to final empty nodes
+			show_end_nodes      : false, // drill to final empty nodes
 			hide_empty          : true, // hide empty menu when menu_height is set, header no effected
 			menu_height         : false, // '200px' , false for auto height
 			show_header		    : false,
@@ -172,7 +172,7 @@
 
 				$($ddObj).before($header);
 
-				$arrow = '<span class="'+defaults.icon_class+'"></span>';
+				$arrow = "<i class='"+defaults.icon_class+" right'></i>";
 
 				// Get width of menu container & height of list item
 				var menuWidth = $($ddObj).outerWidth(true);
@@ -224,7 +224,7 @@
 							var parentLink = $('a:not(.'+defaults.parent_class_link+')',this);
 							var countParent = parseInt($(parentLink).length);
 							getCount = countParent;
-							$('> a',this).append(' <span class="'+defaults.count_class+'">('+getCount+')</span>');
+							$('> a',this).append(' <span class="'+defaults.count_class+'">'+getCount+'</span>');
 						}
 					}
 				});
@@ -416,6 +416,7 @@
 				}
 				if(getNewBreadcrumb == defaults.default_text){
 					// edit mewsoft
+					
 					$('ul',$header).append('<li class="active">'+defaults.default_text+'</li>');
 				}
 			}
