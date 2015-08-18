@@ -1,34 +1,29 @@
 <!DOCTYPE html>
-<html>
-	<head>
-		<title>Bootstrap iPod Style jQuery Drill Down Menu Plugin</title>
-		<meta charset="utf-8">
-		<meta http-equiv="X-UA-Compatible" content="IE=edge">
-		<meta name="viewport" content="width=device-width, initial-scale=1">
-		<!-- link href="css/dcdrilldown.css" rel="stylesheet" type="text/css" /-->
-		<link rel="stylesheet" href="http://netdna.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css" />
-		<link rel="stylesheet" href="http://netdna.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap-theme.min.css" />
-		<link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css" />
-		<!--[if lt IE 9]>
-		<script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
-		<script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
-		<![endif]-->
-		<script src="http://code.jquery.com/jquery.min.js"></script>
-		<script type="text/javascript" src="jquery.cookie.js"></script>
-		<script src="http://netdna.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js"></script>
-		
-		<link rel="stylesheet" href="bootstrap.drilldown.css" />
-        <script type="text/javascript" src="bootstrap.drilldown.js"></script>
+<!--[if IE 9]><html class="lt-ie10" lang="en" > <![endif]-->
+<html class="no-js" lang="en" >
 
-	</head>
+<head>
+  <meta charset="utf-8">
+  <!-- If you delete this meta tag World War Z will become a reality -->
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Foundation 5</title>
 
-	<body>
-		<div class="container">
-			<div class="row">
-				<div class="col-sm-8">
-					<br><br>
-					<div class="">
-						<ul id="drilldown">
+  <!-- If you are using the CSS version, only link these 2 files, you may add app.css to use for your overrides if you like -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/foundation/5.5.2/css/normalize.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/foundation/5.5.2/css/foundation.css">
+  <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css" />
+  <link rel="stylesheet" href="bootstrap.drilldown.css">
+  <!-- If you are using the gem version, you need this only -->
+  
+  
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/foundation/5.5.2/js/vendor/modernizr.js"></script>
+
+</head>
+<body>
+<div class="row">
+<div class="large-12 columns">
+<div class="">
+<ul id="drilldown">
 							<li><a href="#">Home</a></li>
 							<li>
 								<a href="#">Products</a>
@@ -379,55 +374,59 @@
 								</ul>
 							</li>
 						</ul>
-					</div>
-				</div>
-				<div class="clearfix"></div>
-			</div>
 		</div>
+</div>
+</div>
+  <!-- body content here -->
+  
+  
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/foundation/5.5.2/js/vendor/jquery.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/foundation/5.5.2/js/foundation/foundation.min.js"></script>
+  <script type="text/javascript" src="jquery.cookie.js"></script>
+  <script type="text/javascript" src="bootstrap.drilldown.js"></script>
+  <script>
+    $(document).foundation();
+    $(document).ready(function($){
+		
+		$('#drilldown').drilldown({
+	                 wrapper_class	    : 'drilldown panel panel-success',
+	                 menu_class		    : 'drilldown-menu',
+	                 submenu_class	    : 'side-nav ',
+	                 parent_class		: 'dd-parent',
+	                 parent_class_link	: 'dd-parent-a',
+	                 active_class		: 'active',
+	                 header_class_list  : 'breadcrumbs',
+	                 header_class		: 'breadcrumbwrapper',
+	                 class_selected     : 'selected',
+	                 event_type		    : 'click',
+	                 hover_delay	    : 300,
+	                 speed       	    : 'fast',
+	                 save_state		    : true,
+	                 show_count		    : false,
+	                 count_class	    : 'label round',
+	                 icon_class		    : 'fa fa-chevron-right',
+	                 link_type		    : 'breadcrumb', //breadcrumb , link, backlink
+	                 reset_text		    : '<span class="fa fa-folder-open"></span>', // All
+	                 default_text	    : 'Select Category',
+	                 show_end_nodes     : false, // drill to final empty nodes
+	                 hide_empty         : true, // hide empty menu when menu_height is set, header no effected
+	                 menu_height        : '400px', // '200px' , false for auto height
+	                 show_header	    : true,
+	                 header_tag		    : 'h5',// h3
+	                 header_tag_class   : 'subheader hidden list-group-item' // hidden list-group-item active
+		});
+	
+         $('#drilldown').on('click', function(e){
+             console.log('click');
+         });
 
-		<script type="text/javascript">
-			$(document).ready(function($){
-			
-				$('#drilldown').drilldown({
-			                 wrapper_class	    : 'drilldown panel panel-success',
-			                 menu_class		    : 'drilldown-menu',
-			                 submenu_class	    : 'nav ',
-			                 parent_class		: 'dd-parent',
-			                 parent_class_link	: 'dd-parent-a',
-			                 active_class		: 'active',
-			                 header_class_list  : 'breadcrumb',
-			                 header_class		: 'breadcrumbwrapper',
-			                 class_selected     : 'selected',
-			                 event_type		    : 'click',
-			                 hover_delay	    : 300,
-			                 speed       	    : 'fast',
-			                 save_state		    : true,
-			                 show_count		    : false,
-			                 count_class	    : 'dd-count',
-			                 icon_class		    : 'fa fa-chevron-right pull-right dd-icon',
-			                 link_type		    : 'breadcrumb', //breadcrumb , link, backlink
-			                 reset_text		    : '<span class="fa fa-folder-open"></span>', // All
-			                 default_text	    : 'Select Category',
-			                 show_end_nodes     : true, // drill to final empty nodes
-			                 hide_empty         : true, // hide empty menu when menu_height is set, header no effected
-			                 menu_height        : '200px', // '200px' , false for auto height
-			                 show_header	    : false,
-			                 header_tag		    : 'div',// h3
-			                 header_tag_class   : 'list-group-item active' // hidden list-group-item active
-				});
-			
-                 $('#drilldown').on('click', function(e){
-                     console.log('click');
-                 });
-    
-                 $('#drilldown').on('drilldown.parentclick', function(e){
-                     console.log('drilldown.parentclick');
-                 });
-                 $('#drilldown').on('drilldown.linklclick', function(e){
-                     console.log('drilldown.linklclick');
-                 });
-			});
-		</script>
-
-	</body>
+         $('#drilldown').on('drilldown.parentclick', function(e){
+             console.log('drilldown.parentclick');
+         });
+         $('#drilldown').on('drilldown.linklclick', function(e){
+             console.log('drilldown.linklclick');
+         });
+	});
+  </script>
+</body>
 </html>
