@@ -1,6 +1,3 @@
-
-
-# Bootstrap iPod Style jQuery Drill Down Menu Plugin
 # Foundation5 Style Jquery Drill Down Menu Plugin inspired by https://github.com/mewsoft/Bootstrap-DrillDownMenu
 ![Screenshot](bootstrap.drilldown.png)
 
