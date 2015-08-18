@@ -1,0 +1,23 @@
+{
+  "name": "Foundation5-DrillDownMenu",
+  "version": "1.0.0",
+  "description": "Foundation 5 style Jquery Drill Down plugin",
+  "keywords": [
+    "foundation5",
+    "jquery",
+    "drilldown"
+  ],
+  "authors": [
+    "Dr. Ahmed Amin Elsheshtawy Ph.D.",
+    "Özerk USGURLU"
+  ],
+  "license": "MIT",
+  "homepage": "https://github.com/ozerk/Foundation5-DrillDownMenu",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ]
+}
